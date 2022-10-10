@@ -1,0 +1,21 @@
+<section>
+    <h2>Addition Logic</h2>
+    <div >
+        <input type="number" [(ngModel)]="num1"><label>+</label>
+        <input type="number" [(ngModel)]="num2"><label>=</label> <span>{{sumResult}}</span>
+        <br>
+        <button (click)="add()">ADD</button>
+    </div>
+</section>
+<section>
+    <h2>Counter Logic in AppComponent</h2>
+    <button (click)="incr()"> + </button>{{count}}<button (click)="decr()"> - </button>
+</section>
+<hr>
+<section>
+    <h2>CHILD 1</h2>
+    <app-child1></app-child1>
+    <hr>
+    <h2>CHILD 2</h2>
+    <app-child2></app-child2>
+</section>
