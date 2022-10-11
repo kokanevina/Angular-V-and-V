@@ -15,16 +15,26 @@ export class AppComponent {
     empName:"Hari",
     empSalary:56000
   }
-   stud=new Student(33,"Sonam",89);
+  
+   studArray=[
+    new Student(44,"Komal",78,["chem","phy","maths"]),
+    new Student(42,"Sonal",88,["bio","botony","maths"]),
+    new Student(34,"Shivendra",79,["maths","physics"]),
+    new Student(45,"Rajesh",89,["chem"]),
+    new Student(47,"Vishal",98,["chem"]),
+    new Student(24,"Karan",75,["bio", "botony"])
+   ]
 }
 
 class Student{
   studId:number;
   studName:string;
   studPercentage:number;
-  constructor(id:number, name:string, perct:number){
+  subjects:string[];
+  constructor(id:number, name:string, perct:number, subjects:string[]){
     this.studId=id;
     this.studName=name;
     this.studPercentage=perct;
+    this.subjects=subjects;
   }
 }

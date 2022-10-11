@@ -1,4 +1,3 @@
-
 <section>
   <h1>Structural Directives </h1>
   <h2>ngIf</h2>
@@ -18,26 +17,26 @@
     <p *ngIf="voterAge>=18; else elsepart">
       <b>Your are allowed for voting</b>
     </p>
-  <ng-template #elsepart>
-    <p >
-      <b>(else block)Sorry!!! Your are not allowed for voting</b>
-    </p>
-  </ng-template>
+    <ng-template #elsepart>
+      <p>
+        <b>(else block)Sorry!!! Your are not allowed for voting</b>
+      </p>
+    </ng-template>
   </div>
 
   <div>
     <label>Enter your age: </label><input type="number" [(ngModel)]="voterAge">
     <b *ngIf="voterAge>=18 then ifblock; else elseblock"></b> <!-- no part of DOM-->
     <ng-template #ifblock>
-    <p>
-      <b>Your are allowed for voting</b>
-    </p>
-  </ng-template>
-  <ng-template #elseblock>
-    <p >
-      <b>Sorry!!! Your are not allowed for voting</b>
-    </p>
-  </ng-template>
+      <p>
+        <b>Your are allowed for voting</b>
+      </p>
+    </ng-template>
+    <ng-template #elseblock>
+      <p>
+        <b>Sorry!!! Your are not allowed for voting</b>
+      </p>
+    </ng-template>
   </div>
   <hr>
   <h2>ngFor</h2>
@@ -46,10 +45,31 @@
   <ol>
     <li *ngFor="let city of cities">{{city}}</li>
   </ol>
+  <table border="1">
+    <tr>
+      <td *ngFor="let city of cities">{{city}}</td>
+    </tr>
+  </table>
+  <table border="1">
+    <tr *ngFor="let city of cities"><td>{{city}}</td></tr>
+  </table>
   <ul>
     <li><span>Id:</span><span>{{employee.empId}}</span></li>
     <li><span>Name:</span><span>{{employee.empName}}</span></li>
     <li><span>Salary:</span><span>{{employee.empSalary}}</span></li>
   </ul>
- 
+  <table border="1">
+    <caption>Student Details</caption>
+    <thead>
+      <tr><th>ID</th><th>NAME</th><th>PERCENTAGE</th><th>Subjects</th></tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of studArray">
+      <td>{{student.studId}}</td>
+      <td>{{student.studName}}</td>
+      <td>{{student.studPercentage}}</td>
+      <td><span *ngFor="let subject of student.subjects">{{subject}}, </span></td>
+    </tr>
+  </tbody>
+  </table>
 </section>
