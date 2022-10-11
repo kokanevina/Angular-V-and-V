@@ -1,0 +1,55 @@
+
+<section>
+  <h1>Structural Directives </h1>
+  <h2>ngIf</h2>
+
+  <div>
+    <label>Enter your age: </label><input type="number" [(ngModel)]="voterAge">
+    <p *ngIf="voterAge>=18">
+      <b>Your are allowed for voting</b>
+    </p>
+    <p *ngIf="voterAge<18">
+      <b>Sorry!!! Your are not allowed for voting</b>
+    </p>
+  </div>
+
+  <div>
+    <label>Enter your age: </label><input type="number" [(ngModel)]="voterAge">
+    <p *ngIf="voterAge>=18; else elsepart">
+      <b>Your are allowed for voting</b>
+    </p>
+  <ng-template #elsepart>
+    <p >
+      <b>(else block)Sorry!!! Your are not allowed for voting</b>
+    </p>
+  </ng-template>
+  </div>
+
+  <div>
+    <label>Enter your age: </label><input type="number" [(ngModel)]="voterAge">
+    <b *ngIf="voterAge>=18 then ifblock; else elseblock"></b> <!-- no part of DOM-->
+    <ng-template #ifblock>
+    <p>
+      <b>Your are allowed for voting</b>
+    </p>
+  </ng-template>
+  <ng-template #elseblock>
+    <p >
+      <b>Sorry!!! Your are not allowed for voting</b>
+    </p>
+  </ng-template>
+  </div>
+  <hr>
+  <h2>ngFor</h2>
+  <label>Enter city :</label><input type="text" [(ngModel)]="myCity">
+  <button (click)="cities.push(myCity)">PUSH</button>
+  <ol>
+    <li *ngFor="let city of cities">{{city}}</li>
+  </ol>
+  <ul>
+    <li><span>Id:</span><span>{{employee.empId}}</span></li>
+    <li><span>Name:</span><span>{{employee.empName}}</span></li>
+    <li><span>Salary:</span><span>{{employee.empSalary}}</span></li>
+  </ul>
+ 
+</section>
