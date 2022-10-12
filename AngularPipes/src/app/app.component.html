@@ -1,0 +1,52 @@
+<section>
+  <h2>Employee Details</h2>
+  <table border="1" style="width: 50%;">
+    <thead><tr><th>NAME</th><th>NAME (up)</th><th>NAME (low)</th><th>NAME (title)</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.joiningDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>uppercase, lowercase, titlecase pipes</h2>
+  <table border="1" style="width: 50%;">
+    <thead><tr><th>ID</th><th>NAME</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empName | uppercase}}</td>
+        <td>{{employee.empName | lowercase}}</td>
+        <td>{{employee.empName | titlecase}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>number, currency pipes</h2>
+  <table border="1" style="width: 50%;">
+    <thead><tr><th>SALARY</th><th>SALARY (number)</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.empSalary | number}}</td>
+        <td>{{employee.empSalary | number : "5.2-2"}}</td>
+        <td>{{employee.empSalary | number : "5.1-2"}}</td>
+        <td>{{employee.empSalary | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>date</h2>
+  <table border="1" style="width: 50%;">
+    <thead><tr><th>SALARY</th><th>SALARY (number)</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.joiningDate | date}}</td>
+      
+      </tr>
+    </tbody>
+  </table>
+</section>
