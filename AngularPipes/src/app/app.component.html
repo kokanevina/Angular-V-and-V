@@ -27,7 +27,12 @@
   <hr>
   <h2>number, currency pipes</h2>
   <table border="1" style="width: 50%;">
-    <thead><tr><th>SALARY</th><th>SALARY (number)</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+    <thead><tr><th>SALARY</th><th>SALARY(number)</th><th>SALARY(number) </th>
+      <th>SALARY(number)</th><th>salary(currency)</th>
+      <th>salary(currency)</th>
+      <th>salary(currency)</th>
+      <th>salary(currency)</th>
+    </tr></thead>
     <tbody>
       <tr *ngFor="let employee of empArray">
         <td>{{employee.empSalary}}</td>
@@ -35,17 +40,73 @@
         <td>{{employee.empSalary | number : "5.2-2"}}</td>
         <td>{{employee.empSalary | number : "5.1-2"}}</td>
         <td>{{employee.empSalary | currency}}</td>
+        <td>{{employee.empSalary | currency : "INR"}}</td> <!-- EUR/INR/IQD/BDT bydefault symbol (true) -->
+        <td>{{employee.empSalary | currency : "INR": "code"}}</td>  <!-- code : false, symbol : true -->
+        <td>{{employee.empSalary | currency : "INR": true: "6.3-3"}}</td> 
       </tr>
     </tbody>
   </table>
   <hr>
   <h2>date</h2>
-  <table border="1" style="width: 50%;">
-    <thead><tr><th>SALARY</th><th>SALARY (number)</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+  <table border="1" style="width: 100%;">
+    <thead><tr><th>JOINING DATE</th><th>JOINING DATE (date)</th>
+      <th>JOINING DATE (medium date)</th>
+      <th>JOINING DATE (long date)</th>
+      <th>JOINING DATE (short date)</th>
+      <th>JOINING DATE (full date)</th>
+      <th>JOINING DATE (medium time)</th>
+      <th>JOINING DATE (long time)</th>
+      <th>JOINING DATE (short time)</th>
+      <th>JOINING DATE (full time)</th>
+     
+    </tr></thead>
     <tbody>
       <tr *ngFor="let employee of empArray">
-        <td>{{employee.joiningDate | date}}</td>
-      
+        <td>{{employee.joiningDate}}</td>
+        <td>{{employee.joiningDate | date}}</td> <!-- mediumDate bydefault-->
+        <td>{{employee.joiningDate | date: "mediumDate"}}</td>
+        <td>{{employee.joiningDate | date: "longDate"}}</td>
+        <td>{{employee.joiningDate | date: "shortDate"}}</td>
+        <td>{{employee.joiningDate | date: "fullDate"}}</td>
+        <td>{{employee.joiningDate | date: "mediumTime"}}</td>
+        <td>{{employee.joiningDate | date: "longTime"}}</td>
+        <td>{{employee.joiningDate | date: "shortTime"}}</td>
+        <td>{{employee.joiningDate | date: "fullTime"}}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>date</h2>
+  <table border="1" style="width: 100%;">
+    <thead><tr><th>JOINING DATE</th>
+      <th>JOINING DATE (medium )</th>
+      <th>JOINING DATE (long )</th>
+      <th>JOINING DATE (short )</th>
+      <th>JOINING DATE (full )</th>
+    </tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.joiningDate}}</td>
+        <td>{{employee.joiningDate | date: "medium"}}</td>
+        <td>{{employee.joiningDate | date: "long"}}</td>
+        <td>{{employee.joiningDate | date: "short"}}</td>
+        <td>{{employee.joiningDate | date: "full"}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>date</h2>
+  <table border="1" style="width: 100%;">
+    <thead><tr><th>JOINING DATE</th>
+      <th>JOINING DATE (dd-MMM-yyyy)</th>
+    </tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray">
+        <td>{{employee.joiningDate}}</td>
+        <td>{{employee.joiningDate | date:"dd-MMM-yyyy"}}</td>
+        <td>{{employee.joiningDate | date:"dd-MMM-yyyy hh:ss:mm"}}</td>
+        <td>{{employee.joiningDate | date:"d-M-yy hh:ss:mm"}}</td>
       </tr>
     </tbody>
   </table>
