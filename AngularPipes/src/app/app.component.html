@@ -153,9 +153,10 @@
     <tbody>
       <tr *ngFor="let employee of empArray | orderBy: orderKey:reverse:insensitive">
         <td>{{employee.empId}}</td>
-        <td>{{employee.empName}}</td>
-        <td>{{employee.empSalary}}</td>
-        <td>{{employee.joiningDate}}</td>
+        <td>{{employee.empName }}</td>
+        <td>{{employee.empName | reverse : 5 }}</td>
+        <td>{{employee.empSalary }}</td>
+        <td>{{employee.joiningDate }}</td>
       </tr>
     </tbody>
   </table>
