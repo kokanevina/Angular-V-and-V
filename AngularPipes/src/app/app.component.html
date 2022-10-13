@@ -12,7 +12,7 @@
     </tbody>
   </table>
   <hr>
-  <h2>uppercase, lowercase, titlecase pipes</h2>
+  <h2>uppercase, lowercase, titlecase , slice pipes</h2>
   <table border="1" style="width: 100%;">
     <thead><tr><th>NAME</th><th>NAME (up)</th><th>NAME (low)</th><th>NAME (title)</th>
       <th>NAME (slice)</th>    <th>NAME (slice)</th>    <th>NAME (slice)</th>   <th>NAME (slice)</th>
@@ -116,4 +116,48 @@
       </tr>
     </tbody>
   </table>
+  <hr>
+  <table border="1">
+    <tr><td *ngFor="let city of cities">{{city}}</td></tr>
+  </table>
+  <table border="1">
+    <tr><td *ngFor="let city of cities | orderBy">{{city}}</td></tr>
+  </table>
+  <!-- by default  case sensitive , ascending-->
+  <table border="1">
+    <tr><td *ngFor="let city of cities | orderBy">{{city}}</td></tr>
+  </table>
+  <hr>
+  <h2>Employee Details</h2>
+  <table border="1" style="width: 80%;">
+    <thead><tr><th>ID</th><th>NAME</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray | orderBy: orderKey:reverse:insensitive">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.joiningDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <!-- when u click on heading of column then, order should be done with that property-->
+  <h2>Employee Details</h2>
+  <table border="1" style="width: 80%;">
+    <thead><tr>
+      <th (click)="mySort('empId')">ID</th>
+      <th (click)="mySort('empName')">NAME</th>
+      <th (click)="mySort('empSalary')">SALARY</th>
+      <th (click)="mySort('joiningDate')"> JOINING DATE</th>
+    </tr></thead>
+    <tbody>
+      <tr *ngFor="let employee of empArray | orderBy: orderKey:reverse:insensitive">
+        <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.joiningDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
 </section>
