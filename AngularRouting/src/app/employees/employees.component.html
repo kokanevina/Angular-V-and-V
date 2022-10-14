@@ -8,6 +8,7 @@
           <td>{{employee.empName}}</td>
           <td>{{employee.empSalary}}</td>
           <td>{{employee.joiningDate}}</td>
+          <td><a [routerLink]="['/salarydetails',employee.empId]">show salary details</a></td>
         </tr>
       </tbody>
     </table>

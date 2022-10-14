@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SalaryDetailsComponent } from './salary-details/salary-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RegisterComponent,
     EmployeesComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SalaryDetailsComponent
   ],
   imports: [
     BrowserModule,

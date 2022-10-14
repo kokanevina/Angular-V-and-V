@@ -4,28 +4,27 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SalaryDetailsComponent } from './salary-details/salary-details.component';
 // we will define route for a dynamic view
 const routes: Routes = [
   {
-    component:LoginComponent,
-    path:'userlogin'
+    component:LoginComponent, path:'userlogin'
   },
   {
-    component:EmployeesComponent,
-    path:'showemployees'
+    component:EmployeesComponent,path:'showemployees'
   },
   {
-    component:HomeComponent,
-    path:''
+    component:HomeComponent,path:'home'
   },
   {
-    component:HomeComponent,
-    path:'home'
-  },
-  {
-    component: PageNotFoundComponent,
-    path:'**'
+    component:SalaryDetailsComponent, path:'salarydetails/:eid'
 
+  },
+  {
+    component:HomeComponent,path:''
+  },
+  {
+    component: PageNotFoundComponent,path:'**'
   }
 ];
 
