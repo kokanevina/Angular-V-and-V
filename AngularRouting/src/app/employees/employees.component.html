@@ -1,1 +1,14 @@
-<p>employees works!</p>
+<section>
+    <h2>Employee Details</h2>
+    <table border="1" style="width: 80%;">
+      <thead><tr><th>ID</th><th>NAME</th><th>SALARY</th><th>JOINING DATE</th></tr></thead>
+      <tbody>
+        <tr *ngFor="let employee of empArray">
+          <td>{{employee.empId}}</td>
+          <td>{{employee.empName}}</td>
+          <td>{{employee.empSalary}}</td>
+          <td>{{employee.joiningDate}}</td>
+        </tr>
+      </tbody>
+    </table>
+</section>
