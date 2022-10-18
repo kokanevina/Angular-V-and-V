@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 export class SalaryDetailsComponent implements OnInit {
   employeeId:number=0;
   salaryObject:EmployeeSalary;
-  constructor(private _myRoute:ActivatedRoute) {
 
-   }
+  constructor(private _myRoute:ActivatedRoute) {
+  }
 
   ngOnInit(): void {
    this.employeeId=parseInt(this._myRoute.snapshot.paramMap.get('eid'));
-  // console.log(this.employeeId);
-   this.findEmployee();
+
+   let value=this._myRoute.snapshot.paramMap.get('eid');
+   
   }
 
   salaryArray:EmployeeSalary[]=[
