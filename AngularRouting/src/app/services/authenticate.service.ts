@@ -5,6 +5,7 @@ import { usersArray } from 'src/Data/Users';
 })
 export class AuthenticateService {
   authenticated=false;
+  redirectUrl="/";
   constructor() { }
 
   authenticate(form):boolean{

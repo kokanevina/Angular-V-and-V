@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
       console.log(loginForm.value);
       this.loginSuccess=this._authService.authenticate(loginForm.value);
       if(this.loginSuccess)
-        this._router.navigate(['home']);
+        this._router.navigate([this._authService.redirectUrl]);
       else
         this.errorMessage="Invalid Credentials";
   } 
