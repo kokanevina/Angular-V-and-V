@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthenticateService } from '../services/authenticate.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+  loginSuccess=false;
+  errorMessage="";
+  constructor(private _authService:AuthenticateService, private _router:Router) { }
 
   ngOnInit(): void {
   }
   login(loginForm){
       console.log(loginForm.value);
-      console.log(loginForm.value.uname);
-      console.log(loginForm.value.pass);
-      console.log(loginForm.value.userType);
-  }
+      this.loginSuccess=this._authService.authenticate(loginForm.value);
+      if(this.loginSuccess)
+        this._router.navigate(['home']);
+      else
+        this.errorMessage="Invalid Credentials";
+  } 
+ 
 }

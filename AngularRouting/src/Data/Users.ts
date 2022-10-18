@@ -1,6 +1,6 @@
 
-
-let usersArray=[
+import { User } from "./User";
+export let usersArray=[
     new User("admin","vina","vina123"),
     new User("user","pooja","p123"),
     new User("user","vishal","vish123"),
