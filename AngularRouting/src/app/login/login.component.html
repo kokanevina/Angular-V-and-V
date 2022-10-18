@@ -1,9 +1,14 @@
 <section>
-<form>
+<form #loginForm="ngForm" (submit)="login(loginForm)">
+    <label>Select User Type:</label>
+    <select name="userType" ngModel>
+        <option value="user">USER</option>
+        <option value="admin">ADMIN</option>
+    </select><br><br>
     <label>Enter user name</label>
-    <input type="text" id="uname" name="uname"> <br><br>
+    <input type="text" id="uname" name="uname" ngModel> <br><br>
     <label for=""> Enter Password:</label>
-    <input type="text" id="pass" name="pass"><br><br>
+    <input type="text" id="pass" name="pass" ngModel><br><br>
     <input type="submit" value="LOGIN">
     <input type="reset" value="RESET"> 
 </form>
