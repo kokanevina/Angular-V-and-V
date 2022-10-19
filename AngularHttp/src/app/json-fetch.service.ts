@@ -8,6 +8,6 @@ export class JsonFetchService {
   constructor( private _httpService:HttpClient) { }
 
   fetchJsonData(){
-    this._httpService.get("assets/Data/DepartmentsInfo.json")
+    return this._httpService.get("assets/Data/DepartmentsInfo.json");
   }
 }
