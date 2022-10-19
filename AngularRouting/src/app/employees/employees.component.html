@@ -8,10 +8,10 @@
           <td>{{employee.empName}}</td>
           <td>{{employee.empSalary}}</td>
           <td>{{employee.joiningDate}}</td>
-
           <td>  <a [routerLink]="['/salarydetails', 102 ]">show salary details</a>  </td>
-
         </tr>
       </tbody>
     </table>
+    <a routerLink="addemployee">ADD NEW EMPLOYEE</a> <!-- child route-->
 </section>
+<router-outlet></router-outlet>

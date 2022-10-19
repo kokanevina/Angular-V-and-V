@@ -11,6 +11,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SalaryDetailsComponent } from './salary-details/salary-details.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SalaryDetailsComponent } from './salary-details/salary-details.componen
     EmployeesComponent,
     HomeComponent,
     PageNotFoundComponent,
-    SalaryDetailsComponent
+    SalaryDetailsComponent,
+    AddEmployeeComponent
   ],
   imports: [
     BrowserModule,

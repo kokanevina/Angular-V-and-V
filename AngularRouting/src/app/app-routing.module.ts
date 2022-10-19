@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -10,7 +11,9 @@ import { GuardService } from './services/guard.service';
 
 const routes: Routes = [
   {component:LoginComponent, path:'userlogin'},
-  {component:EmployeesComponent,path:'showemployees',  canActivate: [GuardService] },
+  {component:EmployeesComponent,path:'showemployees',  canActivate: [GuardService], children:[
+    { path:'addemployee', component: AddEmployeeComponent}
+  ]},
   {component:HomeComponent,path:'home'},
   {component:HomeComponent,path:''},
   {component:PageNotFoundComponent, path:'**'},
