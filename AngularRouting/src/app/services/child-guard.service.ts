@@ -7,7 +7,7 @@ import { AuthenticateService } from './authenticate.service';
   providedIn: 'root'
 })
 export class ChildGuardService implements CanActivateChild{
-
+  
   constructor(private _authService: AuthenticateService) { }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{

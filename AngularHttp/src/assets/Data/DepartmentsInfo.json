@@ -1,0 +1,24 @@
+{
+    "departmentArray": [
+         {
+            "deptId":"LD",
+            "deptName":"Learning and Development",
+            "deptBudget":5000000
+         },
+         {
+            "deptId":"SM",
+            "deptName":"Sales and Marketing",
+            "deptBudget":6000000
+         },
+         {
+            "deptId":"WT",
+            "deptName":"Web Technology",
+            "deptBudget":4000000
+         },
+         {
+            "deptId":"HRM",
+            "deptName":"Human Resource Management",
+            "deptBudget":6000000
+         }
+    ]
+}
