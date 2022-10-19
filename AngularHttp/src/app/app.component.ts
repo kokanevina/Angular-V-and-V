@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CrudJsonService } from './crud-json.service';
 import { JsonFetchService } from './json-fetch.service';
 
 @Component({
@@ -8,8 +9,7 @@ import { JsonFetchService } from './json-fetch.service';
 })
 export class AppComponent {
   title = 'AngularHttp';
-
-  constructor(private _jsonService:JsonFetchService){
+  constructor(private _jsonService:JsonFetchService, private _crudService:CrudJsonService){
   }
   departmentsJson:any;
   deptArray:Department[];
@@ -24,8 +24,16 @@ export class AppComponent {
       }
     );
   }
-}
 
+  getDepartments(){
+    this._crudService.getData().subscribe({
+      next: result=>this.deptArray=result as Department[],
+      error:err=>console.log(err)       
+    });
+  }
+
+
+}
 class Department{
   deptId:string;
   deptName:string;
