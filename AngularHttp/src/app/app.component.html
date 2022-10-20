@@ -16,16 +16,16 @@
   <table border="1">
     <tbody>
       <tr *ngFor="let department of deptArray">
-       
         <td>{{department.deptId}}</td>
         <td>{{department.deptName}}</td>
         <td>{{department.deptBudget}}</td>
+        <td><button (click)="deleteDepartment(department.deptId)">DELETE</button></td>
       </tr>
     </tbody>
   </table>
 </section>
 <section>
-  <label>Enter code to search the record</label>
+  <label>Enter department id to search the record</label>
   <input type="text" [(ngModel)]="dpid" (blur)="searchDepartment()"> 
   <div *ngIf="dpid!=''">
     <table border="2">

@@ -37,6 +37,12 @@ export class AppComponent {
       error:err=>console.log(err)       
     });
   }
+  deleteDepartment(dptId:string){
+    this._crudService.deleteData(dptId).subscribe({
+      next: result=>console.log(result),
+      error:err=>console.log(err) 
+    })
+  }
 }
 class Department{
  
