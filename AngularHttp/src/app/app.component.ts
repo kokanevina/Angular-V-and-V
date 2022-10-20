@@ -8,7 +8,7 @@ import { JsonFetchService } from './json-fetch.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  dpid="";
+ 
   constructor(private _jsonService:JsonFetchService, private _crudService:CrudJsonService){
   }
   departmentsJson:any;
@@ -31,8 +31,8 @@ export class AppComponent {
       error:err=>console.log(err)       
     });
   }
-  searchDepartment(){
-    this._crudService.searchData(this.dpid).subscribe({
+  searchDepartment(dpid){
+    this._crudService.searchData(dpid).subscribe({
       next: result=>this.department=result as Department,
       error:err=>console.log(err)       
     });
@@ -42,6 +42,7 @@ export class AppComponent {
       next: result=>console.log(result),
       error:err=>console.log(err) 
     })
+    this.getDepartments();
   }
 }
 class Department{

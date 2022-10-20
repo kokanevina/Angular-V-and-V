@@ -20,14 +20,24 @@
         <td>{{department.deptName}}</td>
         <td>{{department.deptBudget}}</td>
         <td><button (click)="deleteDepartment(department.deptId)">DELETE</button></td>
+        <td><button (click)="searchDepartment(department.deptId)">EDIT</button></td>
       </tr>
     </tbody>
   </table>
 </section>
 <section>
+  <h2>DEPARTMENT EDIT FORM</h2>
+  <form>
+    <label>ID: </label><input type=" text" [value]="department.deptId"  readonly><br><br>
+    <label>NAME: </label><input type="text" [value]="department.deptName">
+    <label>BUDGET: </label><input type="text" [value]="department.deptBudget">
+    <input type="submit" value="UPDATE">  <input type="reset" >
+  </form>
+</section>
+<section>
   <label>Enter department id to search the record</label>
-  <input type="text" [(ngModel)]="dpid" (blur)="searchDepartment()"> 
-  <div *ngIf="dpid!=''">
+  <input type="text" (blur)="searchDepartment(deptNode.value)" #deptNode> 
+  <div *ngIf="deptNode.value!=''">
     <table border="2">
       <tr><td>ID:</td><td>{{department.deptId}}</td></tr>
       <tr><td>NAME:</td><td>{{department.deptName}}</td></tr>
