@@ -10,9 +10,9 @@ export class CrudJsonService {
   getData(){
     return this._httpService.get(this.path);
   }
-  searchData(deptId:any){
-    console.log(typeof deptId);
+  searchData(deptCode:string){
+    console.log(typeof deptCode);
     
-    return this._httpService.get(this.path+"/"+deptId);
+    return this._httpService.get(this.path+"/"+deptCode);
   }
 }

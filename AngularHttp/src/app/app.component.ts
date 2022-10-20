@@ -8,11 +8,12 @@ import { JsonFetchService } from './json-fetch.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  dpId="";
+  dpid="";
   constructor(private _jsonService:JsonFetchService, private _crudService:CrudJsonService){
   }
   departmentsJson:any;
   deptArray:Department[];
+  department :Department;
   fetch(){
     this._jsonService.fetchJsonData().subscribe(
       {
@@ -24,7 +25,6 @@ export class AppComponent {
       }
     );
   }
-
   getDepartments(){
     this._crudService.getData().subscribe({
       next: result=>this.deptArray=result as Department[],
@@ -32,20 +32,20 @@ export class AppComponent {
     });
   }
   searchDepartment(){
-    this._crudService.searchData(this.dpId).subscribe({
-      next: result=>console.log(result),
+    this._crudService.searchData(this.dpid).subscribe({
+      next: result=>this.department=result as Department,
       error:err=>console.log(err)       
     });
   }
-
 }
 class Department{
+ 
   deptId:string;
   deptName:string;
   deptBudget:number;
 
-  constructor(id:string,name:string,budget:number){
-    this.deptId=id;
+  constructor( id:string,name:string,budget:number){
+    this.deptId=id;  
     this.deptName=name;
     this.deptBudget=budget;
   }
