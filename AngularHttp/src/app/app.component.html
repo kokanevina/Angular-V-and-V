@@ -1,6 +1,6 @@
 <button (click)="fetch()">Fetch JSON DATA</button>
 <section>
-  <table border="1">
+  <table class="table table-sm" border="1">
     <tbody>
       <tr *ngFor="let department of deptArray">
         <td>{{department.deptId}}</td>
@@ -12,7 +12,7 @@
 </section>
 <hr>
 <section>
-  <button (click)="getDepartments()">Fetch JSON DATA (using JSON server)</button>
+  <button class="btn btn-primary"  (click)="getDepartments()">Fetch JSON DATA (using JSON server)</button>
   <table border="1">
     <tbody>
       <tr *ngFor="let department of deptArray">
@@ -25,7 +25,7 @@
     </tbody>
   </table>
 </section>
-<section>
+<section *ngIf="department!=null">
   <h2>DEPARTMENT EDIT FORM</h2>
   <form>
     <label>ID: </label><input type=" text" [value]="department.deptId"  readonly><br><br>
@@ -34,6 +34,7 @@
     <input type="submit" value="UPDATE">  <input type="reset" >
   </form>
 </section>
+<hr>
 <section>
   <label>Enter department id to search the record</label>
   <input type="text" (blur)="searchDepartment(deptNode.value)" #deptNode> 

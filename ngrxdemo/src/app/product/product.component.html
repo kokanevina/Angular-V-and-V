@@ -1,0 +1,38 @@
+<p>product works!</p>
+<div>
+  
+        <div>
+            <label >Product Id</label>
+            <input type="number"  #productId/>
+          </div>
+        <div>
+          <label >Product Name</label>
+          <input type="text"  #productName/>
+        </div>
+        <div>
+          <label >Product Price</label>
+          <input type="number" #productPrice />
+          </div>
+          <div>
+            <button (click) = "addProduct(productId.value,productName.value, productPrice.value)">Add Product</button>
+          </div>
+      
+</div>
+<div>
+    <table border="2">
+        <thead>
+        <tr>
+            <td>Product Id</td>
+            <td>Product Name</td>
+            <td>Product Price</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | async">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </tbody>
+        </table>
+</div>
