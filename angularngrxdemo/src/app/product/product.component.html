@@ -1,1 +1,29 @@
 <p>product works!</p>
+<section>
+    <h2>Enter Product Details</h2>
+    <div>
+        <label>Enter Id:</label>
+        <input type="number" #pid>
+    </div> 
+    <div>
+        <label>Enter name:</label>
+        <input type="text" #pname>
+    </div>
+    <div>
+        <label>Enter price:</label>
+        <input type="number" #pprice>
+    </div>
+    <button (click)="addProducts(pid.value,pname.value,pprice.value)">ADD PRODUCT</button>
+</section>
+
+<div>
+    <table border="2">
+        <tbody>
+            <tr *ngFor="let pr of products | async">
+                <td>{{pr.id}}</td>
+                <td>{{pr.name}}</td>
+                <td>{{pr.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
