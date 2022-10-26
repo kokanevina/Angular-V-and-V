@@ -2,8 +2,8 @@ import { Product } from "./product.model";
 
 
 export class ProductState{
-    readonly productArray:Product[];
+    readonly product:Product[];
     constructor(array:Product[]){
-        this.productArray=array;
+        this.product=array;
     }
 }

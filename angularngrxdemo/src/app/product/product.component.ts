@@ -11,12 +11,21 @@ import { Product } from '../store/product.model';
 export class ProductComponent implements OnInit {
   products: Observable<Product[]>;
   constructor(private store: Store<ProductState>) {
-      this.products=this.store.select(state=>state.productArray);
+      this.products=this.store.select(state=>state.product);
    }
 
   ngOnInit(): void {
   }
-  addProducts(id:any,name:any,price:any){
+  addProducts(pid:any,pname:any,pprice:any){
+    console.log("in function");
     
+    this.store.dispatch({
+      type:'ADD_PRODUCT',
+      payload:{
+        id:pid,
+        name:pname,
+        price:pprice
+      }
+    });
   }
 }
