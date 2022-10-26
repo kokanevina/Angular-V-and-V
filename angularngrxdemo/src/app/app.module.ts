@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { StoreModule } from '@ngrx/store';
+import { addProductReducer } from './reducers/product.reducer';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 
@@ -10,7 +11,7 @@ import { ProductComponent } from './product/product.component';
     ProductComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, StoreModule.forRoot({product:addProductReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
